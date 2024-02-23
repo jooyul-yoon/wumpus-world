@@ -83,10 +83,10 @@ def print_table(map):
     print('└' + '─' * (sum(max_lengths) + col_length - 1) + '┘')
 
 
-SIZE = 4
-NUM_GOLDS = 1
-NUM_WUMPUS = 1
-NUM_PITS = 4
+SIZE = int(input("Size:"))
+NUM_GOLDS = int(input("Golds:"))
+NUM_WUMPUS = int(input("Wumpus:"))
+NUM_PITS = int(input("Pits:"))
 
 map = [[{'element': '', 'env': set()}
         for _ in range(SIZE)] for _ in range(SIZE)]
