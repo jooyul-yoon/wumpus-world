@@ -42,15 +42,15 @@ def generate_env():
     for i in range(SIZE):
         for j in range(SIZE):
             elem = map[i][j]['element']
-            if elem == 'P':  # Pit인 경우
+            if elem == 'P':
                 for dx, dy in [(1, 0), (-1, 0), (0, 1), (0, -1)]:
                     if 0 <= i + dx < SIZE and 0 <= j + dy < SIZE:
                         map[i + dx][j + dy]['env'].add('b')
-            elif elem == 'G':  # Gold인 경우
+            elif elem == 'G':
                 for dx, dy in [(1, 0), (-1, 0), (0, 1), (0, -1)]:
                     if 0 <= i + dx < SIZE and 0 <= j + dy < SIZE:
                         map[i + dx][j + dy]['env'].add('g')
-            elif elem == 'W':  # Wumpus인 경우
+            elif elem == 'W':
                 for dx, dy in [(1, 0), (-1, 0), (0, 1), (0, -1)]:
                     if 0 <= i + dx < SIZE and 0 <= j + dy < SIZE:
                         map[i + dx][j + dy]['env'].add('s')
@@ -90,6 +90,5 @@ NUM_PITS = 4
 
 map = [[{'element': '', 'env': set()}
         for _ in range(SIZE)] for _ in range(SIZE)]
-
 
 rng_map()
